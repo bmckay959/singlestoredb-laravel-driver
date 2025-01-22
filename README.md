@@ -502,6 +502,10 @@ HYBRID_INTEGRATION=1 ./vendor/bin/phpunit
             <td>10</td>
             <td>8.1</td>
         </tr>
+        <tr>
+            <td>11</td>
+            <td>8.1 - 8.3</td>
+        </tr>
     </tbody>
 </table>
 
