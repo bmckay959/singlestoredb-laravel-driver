@@ -5,6 +5,7 @@ namespace SingleStore\Laravel\Schema\Grammar;
 use Exception;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Fluent;
+use SingleStore\Laravel\Exceptions\UnsupportedFunctionException;
 
 trait ModifiesColumns
 {
@@ -80,7 +81,7 @@ trait ModifiesColumns
     protected function modifyVirtualAs(Blueprint $blueprint, Fluent $column): void
     {
         if (! is_null($column->virtualAs)) {
-            throw new Exception('SingleStore does not support virtual computed columns. Use `storedAs` instead.');
+            throw new UnsupportedFunctionException('SingleStore does not support virtual computed columns. Use `storedAs` instead.');
         }
     }
 }
