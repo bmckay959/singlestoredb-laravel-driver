@@ -3,7 +3,6 @@
 namespace SingleStore\Laravel\Tests\Hybrid\CreateTable;
 
 use PHPUnit\Framework\Attributes\Test;
-use SingleStore\Laravel\Exceptions\UnsupportedFunctionException;
 use SingleStore\Laravel\Schema\Blueprint;
 use SingleStore\Laravel\Tests\BaseTest;
 use SingleStore\Laravel\Tests\Hybrid\HybridTestHelpers;
