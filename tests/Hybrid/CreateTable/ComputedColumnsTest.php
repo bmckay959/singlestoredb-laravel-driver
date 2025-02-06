@@ -2,7 +2,6 @@
 
 namespace SingleStore\Laravel\Tests\Hybrid\CreateTable;
 
-use Exception;
 use PHPUnit\Framework\Attributes\Test;
 use SingleStore\Laravel\Exceptions\UnsupportedFunctionException;
 use SingleStore\Laravel\Schema\Blueprint;

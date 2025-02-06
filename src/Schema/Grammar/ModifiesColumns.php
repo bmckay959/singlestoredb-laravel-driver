@@ -2,7 +2,6 @@
 
 namespace SingleStore\Laravel\Schema\Grammar;
 
-use Exception;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Fluent;
 use SingleStore\Laravel\Exceptions\UnsupportedFunctionException;
