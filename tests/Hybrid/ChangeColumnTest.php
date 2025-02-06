@@ -39,9 +39,7 @@ class ChangeColumnTest extends BaseTest
 
             $this->assertEquals(['id', 'data'], Schema::getColumnListing('test'));
 
-            if (version_compare(Application::VERSION, '10.30', '>=')) {
-                $this->assertEquals('text', Schema::getColumnType('test', 'data'));
-            }
+            $this->assertEquals('text', Schema::getColumnType('test', 'data'));
 
             $this->mockDatabaseConnection = $cached;
         }

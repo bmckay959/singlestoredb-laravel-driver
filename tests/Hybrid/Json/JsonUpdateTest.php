@@ -61,19 +61,10 @@ class JsonUpdateTest extends BaseTest
             ]);
         });
 
-        if (version_compare(Application::VERSION, '10.30.0', '>=')) {
-            // Laravel version >= 10.30.0
-            $this->assertEquals(
-                "update `test` set data = JSON_SET_JSON(data, 'value1', '\\\"foo\\\"')",
-                $logs['query']
-            );
-        } else {
-            // Laravel version < 10.30.0
-            $this->assertEquals(
-                "update `test` set data = JSON_SET_JSON(data, 'value1', ?)",
-                $logs['query']
-            );
-        }
+        $this->assertEquals(
+            "update `test` set data = JSON_SET_JSON(data, 'value1', '\\\"foo\\\"')",
+            $logs['query']
+        );
 
         $this->assertSame('"foo"', $logs['bindings'][0]);
     }
@@ -108,19 +99,10 @@ class JsonUpdateTest extends BaseTest
             ]);
         });
 
-        if (version_compare(Application::VERSION, '10.30.0', '>=')) {
-            // Laravel version >= 10.30.0
-            $this->assertEquals(
-                "update `test` set data = JSON_SET_JSON(data, 'value1', 1.3)",
-                $logs['query']
-            );
-        } else {
-            // Laravel version < 10.30.0
-            $this->assertEquals(
-                "update `test` set data = JSON_SET_JSON(data, 'value1', ?)",
-                $logs['query']
-            );
-        }
+        $this->assertEquals(
+            "update `test` set data = JSON_SET_JSON(data, 'value1', 1.3)",
+            $logs['query']
+        );
 
         $this->assertSame(1.3, $logs['bindings'][0]);
     }
@@ -159,19 +141,10 @@ class JsonUpdateTest extends BaseTest
             ]);
         });
 
-        if (version_compare(Application::VERSION, '10.30.0', '>=')) {
-            // Laravel version >= 10.30.0
-            $this->assertEquals(
-                "update `test` set data = JSON_SET_JSON(data, 'value1', '{\\\"foo\\\":\\\"bar\\\"}')",
-                $logs['query']
-            );
-        } else {
-            // Laravel version < 10.30.0
-            $this->assertEquals(
-                "update `test` set data = JSON_SET_JSON(data, 'value1', ?)",
-                $logs['query']
-            );
-        }
+        $this->assertEquals(
+            "update `test` set data = JSON_SET_JSON(data, 'value1', '{\\\"foo\\\":\\\"bar\\\"}')",
+            $logs['query']
+        );
 
         $this->assertSame('{"foo":"bar"}', $logs['bindings'][0]);
     }

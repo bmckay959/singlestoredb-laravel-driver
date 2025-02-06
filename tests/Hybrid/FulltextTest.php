@@ -102,8 +102,6 @@ class FulltextTest extends BaseTest
         if (version_compare(parent::singlestoreVersion(), '8.1.0', '>=')) {
             // fulltext with utf8mb4_general_ci is supported in newer SingleStore
             $this->markTestSkipped('requires lower SingleStore version');
-
-            return;
         }
 
         try {
