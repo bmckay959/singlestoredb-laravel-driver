@@ -21,10 +21,9 @@ class Blueprint extends BaseBlueprint
     /**
      * Create a new geography column on the table.
      *
-     * @param string $column
-     * @param null $subtype
+     * @param  string  $column
+     * @param  null  $subtype
      * @param  int  $srid
-     * @return ColumnDefinition
      */
     public function geography($column, $subtype = null, $srid = 4326): ColumnDefinition
     {
@@ -39,9 +38,7 @@ class Blueprint extends BaseBlueprint
     /**
      * Create a new point column on the table.
      *
-     * @param string $column
-     * @param null $srid
-     * @return ColumnDefinition
+     * @param  null  $srid
      */
     public function point(string $column, $srid = null): ColumnDefinition
     {
@@ -51,9 +48,6 @@ class Blueprint extends BaseBlueprint
     /**
      * Execute the blueprint against the database.
      *
-     * @param Connection $connection
-     * @param Grammar $grammar
-     * @return void
      * @throws Exception
      */
     public function build(Connection $connection, Grammar $grammar): void
