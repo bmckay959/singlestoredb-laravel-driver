@@ -2,7 +2,7 @@
 
 namespace SingleStore\Laravel\Tests\Hybrid\CreateTable;
 
-use Exception;
+use PHPUnit\Framework\Attributes\Test;
 use SingleStore\Laravel\Schema\Blueprint;
 use SingleStore\Laravel\Tests\BaseTest;
 use SingleStore\Laravel\Tests\Hybrid\HybridTestHelpers;
@@ -11,10 +11,10 @@ class ComputedColumnsTest extends BaseTest
 {
     use HybridTestHelpers;
 
-    /** @test */
+    #[Test]
     public function computed_virtual_throws_an_exception()
     {
-        $this->expectException(Exception::class);
+        $this->expectException(\TypeError::class);
         $this->expectExceptionMessage('SingleStore does not support virtual computed columns. Use `storedAs` instead.');
 
         $blueprint = $this->createTable(function (Blueprint $table) {
@@ -24,7 +24,7 @@ class ComputedColumnsTest extends BaseTest
         $this->assertCreateStatement($blueprint, 'Argument is moot, exception will be thrown.');
     }
 
-    /** @test */
+    #[Test]
     public function computed_stored()
     {
         $blueprint = $this->createTable(function (Blueprint $table) {

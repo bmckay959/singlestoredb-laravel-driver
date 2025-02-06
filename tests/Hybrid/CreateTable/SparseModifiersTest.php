@@ -2,6 +2,7 @@
 
 namespace SingleStore\Laravel\Tests\Hybrid\CreateTable;
 
+use PHPUnit\Framework\Attributes\Test;
 use SingleStore\Laravel\Schema\Blueprint;
 use SingleStore\Laravel\Tests\BaseTest;
 use SingleStore\Laravel\Tests\Hybrid\HybridTestHelpers;
@@ -10,7 +11,7 @@ class SparseModifiersTest extends BaseTest
 {
     use HybridTestHelpers;
 
-    /** @test */
+    #[Test]
     public function sparse_column()
     {
         $blueprint = $this->createTable(function (Blueprint $table) {
@@ -25,7 +26,7 @@ class SparseModifiersTest extends BaseTest
         );
     }
 
-    /** @test */
+    #[Test]
     public function sparse_table()
     {
         $blueprint = $this->createTable(function (Blueprint $table) {
@@ -42,7 +43,7 @@ class SparseModifiersTest extends BaseTest
         );
     }
 
-    /** @test */
+    #[Test]
     public function sparse_with_after()
     {
         // See https://github.com/singlestore-labs/singlestoredb-laravel-driver/issues/18
