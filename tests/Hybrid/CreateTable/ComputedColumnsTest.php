@@ -15,7 +15,7 @@ class ComputedColumnsTest extends BaseTest
     #[Test]
     public function computed_virtual_throws_an_exception()
     {
-        $this->expectException(UnsupportedFunctionException::class);
+        $this->expectException(\TypeError::class);
         $this->expectExceptionMessage('SingleStore does not support virtual computed columns. Use `storedAs` instead.');
 
         $blueprint = $this->createTable(function (Blueprint $table) {
