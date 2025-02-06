@@ -37,8 +37,10 @@ class Blueprint extends BaseBlueprint
 
     /**
      * Create a new point column on the table.
+     *
+     * @param  null  $srid
      */
-    public function point(string $column): ColumnDefinition
+    public function point(string $column, $srid = null): ColumnDefinition
     {
         return $this->addColumn('point', $column);
     }
