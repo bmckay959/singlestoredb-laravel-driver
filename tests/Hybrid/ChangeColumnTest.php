@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace SingleStore\Laravel\Tests\Hybrid;
 
@@ -12,6 +14,7 @@ use SingleStore\Laravel\Tests\BaseTest;
 class ChangeColumnTest extends BaseTest
 {
     use HybridTestHelpers;
+
     #[Test]
     public function change_column_on_rowstore_table()
     {
