@@ -3,6 +3,7 @@
 namespace SingleStore\Laravel\Tests\Hybrid;
 
 use Illuminate\Support\Facades\Schema;
+use PHPUnit\Framework\Attributes\Test;
 use SingleStore\Laravel\Schema\Blueprint;
 use SingleStore\Laravel\Tests\BaseTest;
 
@@ -30,7 +31,7 @@ class RenameTest extends BaseTest
         parent::tearDown();
     }
 
-    /** @test */
+    #[Test]
     public function rename_table()
     {
         if ($this->runHybridIntegrations()) {
@@ -55,7 +56,7 @@ class RenameTest extends BaseTest
         $this->assertEquals('alter table `test` rename to `test_renamed`', $statements[0]);
     }
 
-    /** @test */
+    #[Test]
     public function rename_column()
     {
         if ($this->runHybridIntegrations()) {

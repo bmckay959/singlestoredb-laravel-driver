@@ -3,6 +3,7 @@
 namespace SingleStore\Laravel\Tests\Hybrid\CreateTable;
 
 use Illuminate\Foundation\Application;
+use PHPUnit\Framework\Attributes\Test;
 use SingleStore\Laravel\Schema\Blueprint;
 use SingleStore\Laravel\Tests\BaseTest;
 use SingleStore\Laravel\Tests\Hybrid\HybridTestHelpers;
@@ -11,7 +12,7 @@ class IncrementWithoutPrimaryKeyTest extends BaseTest
 {
     use HybridTestHelpers;
 
-    /** @test */
+    #[Test]
     public function it_adds_a_big_increments_without_primary_key()
     {
         $blueprint = $this->createTable(function (Blueprint $table) {
@@ -34,7 +35,7 @@ class IncrementWithoutPrimaryKeyTest extends BaseTest
         }
     }
 
-    /** @test */
+    #[Test]
     public function it_adds_an_id_without_primary_key()
     {
         $blueprint = $this->createTable(function (Blueprint $table) {

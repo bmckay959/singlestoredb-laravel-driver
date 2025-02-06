@@ -4,6 +4,7 @@ namespace SingleStore\Laravel\Tests\Hybrid;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\DB;
+use PHPUnit\Framework\Attributes\Test;
 use SingleStore\Laravel\Schema\Blueprint;
 use SingleStore\Laravel\Tests\BaseTest;
 
@@ -11,7 +12,7 @@ class GroupLimitTest extends BaseTest
 {
     use HybridTestHelpers;
 
-    /** @test */
+    #[Test]
     public function group_limit()
     {
         if (version_compare(Application::VERSION, '11.0.0', '<')) {

@@ -1,9 +1,10 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace SingleStore\Laravel\Tests\Hybrid;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Schema;
+use PHPUnit\Framework\Attributes\Test;
 use SingleStore\Laravel\Schema\Blueprint;
 use SingleStore\Laravel\Schema\SingleStoreBuilder;
 use SingleStore\Laravel\Tests\BaseTest;
@@ -11,8 +12,7 @@ use SingleStore\Laravel\Tests\BaseTest;
 class ChangeColumnTest extends BaseTest
 {
     use HybridTestHelpers;
-
-    /** @test */
+    #[Test]
     public function change_column_on_rowstore_table()
     {
         if ($this->runHybridIntegrations()) {
@@ -58,7 +58,7 @@ class ChangeColumnTest extends BaseTest
         $this->assertEquals('alter table `test` modify `data` text null', $statements[0]);
     }
 
-    /** @test */
+    #[Test]
     public function change_column_of_columnstore_table()
     {
         if (version_compare(Application::VERSION, '11.15', '<')) {

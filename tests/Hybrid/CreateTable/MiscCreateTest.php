@@ -3,6 +3,7 @@
 namespace SingleStore\Laravel\Tests\Hybrid\CreateTable;
 
 use Illuminate\Foundation\Application;
+use PHPUnit\Framework\Attributes\Test;
 use SingleStore\Laravel\Schema\Blueprint;
 use SingleStore\Laravel\Tests\BaseTest;
 use SingleStore\Laravel\Tests\Hybrid\HybridTestHelpers;
@@ -11,7 +12,7 @@ class MiscCreateTest extends BaseTest
 {
     use HybridTestHelpers;
 
-    /** @test */
+    #[Test]
     public function all_keys_are_added_in_create_columnstore()
     {
         $blueprint = $this->createTable(function (Blueprint $table) {
@@ -34,7 +35,7 @@ class MiscCreateTest extends BaseTest
         }
     }
 
-    /** @test */
+    #[Test]
     public function all_keys_are_added_in_create_rowstore()
     {
         $blueprint = $this->createTable(function (Blueprint $table) {
@@ -57,7 +58,7 @@ class MiscCreateTest extends BaseTest
         }
     }
 
-    /** @test */
+    #[Test]
     public function medium_integer_id()
     {
         $blueprint = $this->createTable(function (Blueprint $table) {
@@ -70,7 +71,7 @@ class MiscCreateTest extends BaseTest
         );
     }
 
-    /** @test */
+    #[Test]
     public function discussion_53()
     {
         $blueprint = $this->createTable(function (Blueprint $table) {
@@ -96,7 +97,7 @@ class MiscCreateTest extends BaseTest
         }
     }
 
-    /** @test */
+    #[Test]
     public function json_column()
     {
         $blueprint = $this->createTable(function (Blueprint $table) {

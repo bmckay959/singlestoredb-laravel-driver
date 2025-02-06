@@ -4,6 +4,7 @@ namespace SingleStore\Laravel\Tests\Hybrid\Json;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\DB;
+use PHPUnit\Framework\Attributes\Test;
 use SingleStore\Laravel\Schema\Blueprint;
 use SingleStore\Laravel\Tests\BaseTest;
 use SingleStore\Laravel\Tests\Hybrid\HybridTestHelpers;
@@ -12,7 +13,7 @@ class FulltextTest extends BaseTest
 {
     use HybridTestHelpers;
 
-    /** @test */
+    #[Test]
     public function fulltext()
     {
         $query = DB::table('test')->whereFullText('title', 'performance');
@@ -54,7 +55,7 @@ class FulltextTest extends BaseTest
         );
     }
 
-    /** @test */
+    #[Test]
     public function fulltext_multicolumn()
     {
         $query = DB::table('test')->whereFullText(['name', 'race'], 'Laika');
@@ -92,7 +93,7 @@ class FulltextTest extends BaseTest
         $this->assertSame('Laika', $query->get()[0]->name);
     }
 
-    /** @test */
+    #[Test]
     public function throws_exception_when_using_an_unsupported_collation()
     {
         if (! $this->runHybridIntegrations()) {
