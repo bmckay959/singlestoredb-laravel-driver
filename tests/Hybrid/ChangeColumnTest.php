@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 namespace SingleStore\Laravel\Tests\Hybrid;
 
 use Illuminate\Foundation\Application;
